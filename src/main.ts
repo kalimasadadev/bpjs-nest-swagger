@@ -11,6 +11,8 @@ async function bootstrap() {
     .setVersion("1.0.0")
     // .addTag("bpjs")
     .build();
+  
+  // swagger
   const document = SwaggerModule.createDocument(app, docbuilder);
   SwaggerModule.setup("api", app, document);
 

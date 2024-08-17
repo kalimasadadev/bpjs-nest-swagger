@@ -11,6 +11,7 @@ export class PasienService {
     @InjectRepository(Pasien)
     private pasienRepository: Repository<Pasien>
   ) { }
+  
   create(createPasienDto: CreatePasienDto) {
     // return 'This action adds a new pasien';
     return this.pasienRepository.insert(createPasienDto);
