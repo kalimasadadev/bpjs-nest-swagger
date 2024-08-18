@@ -1,13 +1,20 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards } from '@nestjs/common';
 import { PenggunaService } from './pengguna.service';
 import { CreatePenggunaDto } from './dto/create-pengguna.dto';
 import { UpdatePenggunaDto } from './dto/update-pengguna.dto';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiHeader, ApiTags } from '@nestjs/swagger';
+import { AuthGuard } from 'src/auth/auth.guard';
 
 @ApiTags("penggunas")
 @Controller('pengguna')
+
+@UseGuards(AuthGuard)
+@ApiHeader({
+  name: 'access_token',
+  required: true
+})
 export class PenggunaController {
-  constructor(private readonly penggunaService: PenggunaService) {}
+  constructor(private readonly penggunaService: PenggunaService) { }
 
   @Post()
   create(@Body() createPenggunaDto: CreatePenggunaDto) {
