@@ -10,6 +10,13 @@ async function bootstrap() {
     .setDescription("BPJS API BRIDGING INDONESIA HEALTH CARE")
     .setVersion("1.0.0")
     // .addTag("bpjs")
+    // .addBearerAuth({
+    //   name: 'Authorization',
+    //   type: 'http',
+    //   in: 'Header',
+    //   scheme: 'Bearer',
+    //   bearerFormat: 'Bearer',
+    // },'access-token')
     .build();
   
   // swagger

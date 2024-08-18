@@ -5,27 +5,32 @@ import { jwtConstants } from './constants';
 
 @Injectable()
 export class AuthService {
+
     constructor(
         private readonly penggunaService: PenggunaService,
         private readonly jwtService: JwtService
     ) { }
 
+    async getProfile(id: number) {
+        return await this.penggunaService.findOne(id)
+    }
+
     async login(
-        username: string, 
+        username: string,
         passwordText: string
     ): Promise<any> {
         const user = await this.penggunaService.findByUsername(username);
-        if(user?.password !== passwordText) {
+        if (user?.password !== passwordText) {
             throw new UnauthorizedException();
         }
 
         // const { password, ...result } = user;
         // return result;
 
-        const payload = { sub: user.username };
+        const payload = { sub: user.id, user: user.username };
         return {
             data: await user,
-            access_token: await this.jwtService.signAsync(payload, { secret: jwtConstants.secret})
+            access_token: await this.jwtService.signAsync(payload, { secret: jwtConstants.secret })
         }
     }
 }
