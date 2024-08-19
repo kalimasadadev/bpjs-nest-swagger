@@ -9,6 +9,7 @@ import { ConfigModule } from '@nestjs/config';
 import { PenggunaModule } from './pengguna/pengguna.module';
 import { Pengguna } from './pengguna/entities/pengguna.entity';
 import { AuthModule } from './auth/auth.module';
+import { VclaimModule } from './vclaim/vclaim.module';
 
 @Module({
   imports: [
@@ -28,7 +29,8 @@ import { AuthModule } from './auth/auth.module';
     }),
     PasienModule,
     PenggunaModule,
-    AuthModule
+    AuthModule,
+    VclaimModule
   ],
   controllers: [AppController],
   providers: [AppService],
