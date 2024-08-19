@@ -26,6 +26,11 @@
 
 BRIDGING BPJS API 2024.
 
+## FITUR
+
+- JWT ACCESS
+- VCLAIM
+
 ## Pemasangan
 
 ```bash
