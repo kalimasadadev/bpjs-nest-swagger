@@ -66,7 +66,7 @@ $ npm run test:cov
 
 ## Dukung Kami
 
-Ahmad Sirojul Miftakh dan TIM Pengembang KALIMASADA
+TIM Pengembang KALIMASADA
 
 <a href="https://paypal.me/kalimasadadev" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
 
